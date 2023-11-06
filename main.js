@@ -72,23 +72,20 @@ function Product(category, type, price) {
 	}
 }
 
-let kitchenProducts1 = new Product('kitchen', 'grater', 10);
-let kitchenProducts2 = new Product('kitchen', 'pastry-bag', 25);
-let kitchenProducts3 = new Product('kitchen', 'scale', 5);
-let kitchenProducts4 = new Product('kitchen', 'whisk', 15);
+let products = [];
 
-let devicesProducts1 = new Product('devices', 'desktop', [100, 1000]);
-let devicesProducts2 = new Product('devices', 'laptop', [50, 1500]);
-let devicesProducts3 = new Product('devices', 'smartphone', [80, 2000]);
-let devicesProducts4 = new Product('devices', 'tablet', [20, 1300]);
+kitchenProducts.forEach(product => {
+	products.push(new Product('kitchen', product.type, product.price));
+});
 
-let cosmeticsProducts1 = new Product('cosmetics', 'blush', 100);
-let cosmeticsProducts2 = new Product('cosmetics', 'eyeshadow', 50);
-let cosmeticsProducts3 = new Product('cosmetics', 'lipstick', 80);
-let cosmeticsProducts4 = new Product('cosmetics', 'nail-polish', 200);
-let cosmeticsProducts5 = new Product('cosmetics', 'perfume', 300);
+devicesProducts.forEach(product => {
+	products.push(new Product('devices', product.type, product.price));
+});
 
-let products = [kitchenProducts1, kitchenProducts2, kitchenProducts3, kitchenProducts4, devicesProducts1, devicesProducts2, devicesProducts3, devicesProducts4, cosmeticsProducts1, cosmeticsProducts2, cosmeticsProducts3, cosmeticsProducts4, cosmeticsProducts5];
+cosmeticsProducts.forEach(product => {
+	products.push(new Product('cosmetics', product.type, product.price));
+});
+
 
 let table = document.createElement('table');
 let tbody = document.createElement('tbody');
